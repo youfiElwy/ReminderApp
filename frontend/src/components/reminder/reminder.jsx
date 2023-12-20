@@ -102,7 +102,7 @@ function Reminder({ id, title, text, date, image, onDelete }) {
 
 	return (
 		<>
-			<div className="hero min-h-[40vh] mt-4">
+			<div className="hero min-h-[35vh] mt-4">
 				<div className="hero-content group hover:bg-base-200 transition-colors duration-300 flex-col lg:flex-row-reverse bg-base-200 bg-opacity-50 rounded-3xl w-full">
 					<img
 						src={image}
