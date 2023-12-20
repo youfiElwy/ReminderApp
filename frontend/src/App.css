@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hide the vertical and horizontal scroll bars */
+::-webkit-scrollbar {
+	width: 0px; /* You can adjust the width as needed */
+	height: 0px; /* You can adjust the height as needed */
+}
+
+.ppInput {
+	display: none;
+}
+
+.custom-file-upload {
+	margin: auto;
+	width: 130px;
+	height: 130px;
+	cursor: pointer;
+	object-fit: cover;
+	object-position: center center;
+}
+
