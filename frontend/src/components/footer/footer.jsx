@@ -23,7 +23,7 @@ function Footer({ showNavNFooter }) {
 	return (
 		<>
 			<motion.footer
-				className="footer p-10 bg-base-300 text-base-content"
+				className="footer p-10 bg-base-300 text-base-content mt-16"
 				variants={footerVariants}
 				initial="hidden"
 				animate={showNavNFooter ? 'visible' : 'exit'}

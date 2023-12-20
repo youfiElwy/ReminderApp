@@ -106,7 +106,7 @@ function Reminder({ id, title, text, date, image, onDelete }) {
 				<div className="hero-content group hover:bg-base-200 transition-colors duration-300 flex-col lg:flex-row-reverse bg-base-200 bg-opacity-50 rounded-3xl w-full">
 					<img
 						src={image}
-						alt=""
+						alt="No Image Added"
 						className="w-48 h-48 lg:w-64 lg:h-64 rounded-lg shadow-2xl object-cover"
 					/>
 					<div className="flex-grow">
@@ -118,7 +118,13 @@ function Reminder({ id, title, text, date, image, onDelete }) {
 								className="text-5xl font-bold w-full bg-transparent border-none shadow-none rounded-lg p-0 m-0"
 							/>
 						) : (
-							<h1 className="text-5xl font-bold">{editedTitle}</h1>
+							<input
+								type="text"
+								value={editedTitle}
+								onChange={handleTitleChange}
+								className="text-5xl font-bold w-full bg-transparent border-none shadow-none rounded-lg p-0 m-0"
+								disabled
+							/>
 						)}
 						{isEditing ? (
 							<input
@@ -128,7 +134,14 @@ function Reminder({ id, title, text, date, image, onDelete }) {
 								className="text-xl bg-transparent border-none shadow-none rounded-lg p-0 m-0"
 							/>
 						) : (
-							<div className="badge badge-outline">{formatDate(editedDate)}</div>
+							// <input
+							// 	type="date"
+							// 	value={formatDate(editedDate)}
+							// 	onChange={handleDateChange}
+							// 	className="text-xl bg-transparent border-none shadow-none rounded-lg p-0 m-0"
+							// 	disabled
+							// />
+							<div className="badge badge-outline m-1">{formatDate(editedDate)}</div>
 						)}
 						{isEditing ? (
 							<textarea
@@ -137,7 +150,12 @@ function Reminder({ id, title, text, date, image, onDelete }) {
 								className="py-6 w-full bg-transparent border-none shadow-none rounded-lg p-0 m-0"
 							/>
 						) : (
-							<p className="py-6">{editedText}</p>
+							<textarea
+								value={editedText}
+								onChange={handleTextChange}
+								className="py-6 w-full bg-transparent border-none shadow-none rounded-lg p-0 m-0"
+								disabled
+							/>
 						)}
 						<button className="btn btn-outline mr-3" onClick={handleEditClick}>
 							{isEditing ? 'Save Edit' : 'Edit'}
@@ -145,22 +163,6 @@ function Reminder({ id, title, text, date, image, onDelete }) {
 						<button className="btn btn-outline btn-error" onClick={handleDeleteClick}>
 							Delete
 						</button>
-					</div>
-				</div>
-			</div>
-
-			<div className="card lg:card-side bg-base-100 shadow-xl">
-				<figure>
-					<img
-						src="https://daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.jpg"
-						alt="Album"
-					/>
-				</figure>
-				<div className="card-body">
-					<h2 className="card-title">New album is released!</h2>
-					<p>Click the button to listen on Spotiwhy app.</p>
-					<div className="card-actions justify-end">
-						<button className="btn btn-primary">Listen</button>
 					</div>
 				</div>
 			</div>
