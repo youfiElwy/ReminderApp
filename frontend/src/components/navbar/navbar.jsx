@@ -51,6 +51,24 @@ export default function Navbar({ showNavNFooter, setShowNavNFooter }) {
 	const initialShowNavNFooter = localStorage.getItem('showNavNFooter') === 'true';
 	const [isInitialRender, setIsInitialRender] = useState(true);
 
+	const handleLogout = async () => {
+		try {
+			const response = await fetch('http://localhost:3001/logout', {
+				method: 'GET',
+				credentials: 'include',
+			});
+
+			if (response.status === 200) {
+				navigate('/');
+			} else {
+				// Handle other status codes or errors
+				console.error('Logout failed:', response.statusText);
+			}
+		} catch (error) {
+			console.error('Error during logout:', error.message);
+		}
+	};
+
 	useEffect(() => {
 		if (isInitialRender) {
 			// Set the state only on the initial render
@@ -192,10 +210,7 @@ export default function Navbar({ showNavNFooter, setShowNavNFooter }) {
 																active ? 'bg-base-100' : '',
 																'block px-4 py-2 text-sm text-white'
 															)}
-															onClick={() => {
-																setShowNavNFooter(false);
-																navigate('/');
-															}}
+															onClick={handleLogout}
 														>
 															Log Out
 														</Link>

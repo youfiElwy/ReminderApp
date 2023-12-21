@@ -4,53 +4,7 @@ import Reminders from '../../components/reminderList/reminderList';
 import HomeSection2 from '../../components/homeSection2/homeSection2';
 import { motion } from 'framer-motion';
 import React, { useState, useEffect } from 'react';
-
-import testImage from '../../assets/cat1.webp';
-
-// const reminders = [
-// 	{
-// 		id: 1,
-// 		title: 'Reminder 1 NORMAL',
-// 		text: "This is the text for reminder 1 and I love hotdogs. Hotdogs are really good. I also love McDonald's pancakes and chicken egg McMuffins.",
-// 		date: '04/21/2003',
-// 		image: testImage,
-// 	},
-// 	{
-// 		id: 2,
-// 		title: 'Reminder 2',
-// 		text: 'This is the text for reminder 2. Insert your text here.',
-// 		date: '04/21/2003',
-// 		image: testImage,
-// 	},
-// 	{
-// 		id: 3,
-// 		title: 'Reminder 3',
-// 		text: 'This is the text for reminder 3. Insert your text here.',
-// 		date: '04/21/2003',
-// 		image: testImage,
-// 	},
-// 	{
-// 		id: 4,
-// 		title: 'Reminder 4',
-// 		text: 'This is the text for reminder 4. Insert your text here.',
-// 		date: '04/21/2003',
-// 		image: testImage,
-// 	},
-// 	{
-// 		id: 5,
-// 		title: 'Reminder 5',
-// 		text: 'This is the text for reminder 5. Insert your text here.',
-// 		date: '04/21/2003',
-// 		image: testImage,
-// 	},
-// 	{
-// 		id: 6,
-// 		title: 'Reminder 6',
-// 		text: 'This is the text for reminder 6. Insert your text here.',
-// 		date: '04/21/2003',
-// 		image: testImage,
-// 	},
-// ];
+import { useNavigate } from 'react-router-dom';
 
 const containerVariants = {
 	hidden: {
@@ -68,6 +22,7 @@ const containerVariants = {
 
 function Homepage() {
 	const [reminders, setReminders] = useState([]);
+	const navigate = useNavigate();
 
 	const getReminders = async () => {
 		await fetch('http://localhost:3001/getNormalReminders/', {
@@ -80,6 +35,10 @@ function Homepage() {
 			.then((response) => {
 				if (response.status === 200) {
 					return response.json();
+				} else if (response.status === 406) {
+					// Handle 403 status (e.g., display an error message)
+					console.log('Unauthorized access. Redirecting to login page.');
+					navigate('/');
 				} else {
 					return response.text().then((error) => {
 						console.log(error);
@@ -87,7 +46,9 @@ function Homepage() {
 				}
 			})
 			.then((data) => {
-				setReminders(data);
+				if (data) {
+					setReminders(data);
+				}
 			})
 			.catch((error) => {
 				console.error('Error:', error.message);

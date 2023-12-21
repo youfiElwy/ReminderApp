@@ -32,13 +32,13 @@ const getFrequentReminders = require('./routes/private/getFrequentReminders.js')
 const getSensitiveReminders = require('./routes/private/getSensitiveReminders.js');
 const deleteReminder = require('./routes/private/deleteReminder.js');
 const editReminder = require('./routes/private/editReminder.js');
-const getReminderImage = require('./routes/private/getReminderImage.js');
+const logout = require('./routes/public/logout.js');
 
 // PUBLIC ROUTES
 login(app);
 signup(app);
+logout(app);
 
-getReminderImage(app);
 // PRIVATE ROUTES
 app.use(authMiddleware.verifyToken);
 addReminder(app);
