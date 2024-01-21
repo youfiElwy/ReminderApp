@@ -4,6 +4,35 @@
 
 Welcome to the Reminder Website – your efficient and secure platform for managing and organizing reminders. This web-based application is designed to provide users with a seamless experience, allowing them to create, edit, and delete reminders with ease. Dive into the world of organized productivity with Reminder Website.
 
+
+
+## Home Page
+![1](https://github.com/AhmedHosny2/Staff-Help-Desk/assets/102544122/4d4543ca-0ffb-48f7-af50-a9f50db07b9a)
+![bottomHome](https://github.com/AhmedHosny2/Staff-Help-Desk/assets/102544122/d15c59fc-f7b2-43e3-b1ec-b9cc5d03ba0d)
+
+
+
+
+## Normal Reminders
+![normal](https://github.com/AhmedHosny2/Staff-Help-Desk/assets/102544122/9942a93f-f057-440a-befb-82a25bba5138)
+
+
+
+
+## Other Reminders
+![Sensitive Reminder](https://github.com/AhmedHosny2/Staff-Help-Desk/assets/102544122/793d2090-221c-4e0f-b5f6-72e82de7c5a0)
+
+
+
+
+## Add Reminder
+![addRem](https://github.com/AhmedHosny2/Staff-Help-Desk/assets/102544122/58ec8a4a-f23f-446d-86a7-8d5f2aabf91f)
+
+
+
+
+
+
 ## Features
 
 ### 1. Intuitive Website Design
@@ -35,22 +64,5 @@ Welcome to the Reminder Website – your efficient and secure platform for manag
 - Application optimization for seamless user experience.
 - Responsive design catering to various screen sizes.
 
-## Screenshots
 
-*Insert screenshots or GIFs showcasing different sections of the application.*
 
-## Milestones
-
-The development of the Reminder Website is progressing through key milestones, ensuring the delivery of a high-quality, user-friendly application.
-
-## Contributing
-
-We welcome contributions! If you'd like to contribute to the Reminder Website project, please follow our [Contribution Guidelines](CONTRIBUTING.md).
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-*Feel free to customize and add more sections based on your specific project details and requirements.*
